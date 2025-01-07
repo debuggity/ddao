@@ -1,0 +1,429 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #000;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  overflow-x: hidden;
+}
+
+/* accent color: a more subtle teal for a modern industrial vibe */
+:root {
+  --accent: #1abc9c;
+}
+
+/* Header & Nav */
+header {
+  background-color: #000;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* center-align the header content */
+  border-bottom: 1px solid #222;
+}
+
+.logo-box {
+  position: absolute; /* take the logo out of the flow */
+  left: 1rem; /* position the logo on the left */
+}
+
+.corner-logo {
+  height: 40px;
+  width: auto;
+  margin-top: -10px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+}
+
+.nav-links li {
+  margin-left: 2rem;
+}
+
+.nav-links a,
+.nav-links .coming-soon {
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.2s ease;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+}
+
+.nav-links a:hover {
+  color: var(--accent);
+}
+
+.coming-soon {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.coming-soon:hover {
+  color: #fff;
+  opacity: 0.7;
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle, #111 0%, #000 100%);
+  text-align: center;
+}
+
+.hero-content {
+  max-width: 650px;
+  margin: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+}
+
+.hero-logo {
+  width: 300px;
+  height: auto;
+  margin-bottom: 1.5rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  opacity: 0.9;
+  margin-bottom: 2rem;
+  max-width: 600px;
+}
+
+.hero-btn {
+  background-color: var(--accent);
+  color: #fff;
+  padding: 0.85rem 1.8rem;
+  border: none;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.hero-btn:hover {
+  background-color: #17a085;
+  transform: scale(1.03);
+}
+
+/* Content Wrapper */
+.content-wrapper {
+  background-color: #111;
+  margin: 2rem auto;
+  padding: 2rem;
+  max-width: 900px;
+  border-radius: 8px;
+  box-shadow: 0 0 30px rgba(0,0,0,0.8);
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards;
+}
+
+.content-wrapper h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #222;
+  padding-bottom: 0.5rem;
+}
+
+.content-wrapper p {
+  margin-bottom: 1rem;
+  line-height: 1.7;
+  font-weight: 300;
+  opacity: 0.9;
+}
+
+/* Roadmap Phases */
+.roadmap-phase {
+  background-color: #1a1a1a;
+  margin-bottom: 1.5rem;
+  padding: 1.5rem;
+  border-radius: 6px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+}
+
+.roadmap-phase h3 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  color: var(--accent);
+  font-size: 1.25rem;
+}
+
+.roadmap-phase ul {
+  list-style-type: disc;
+  margin-left: 1.5rem;
+  line-height: 1.6;
+}
+
+
+
+/* Buttons & Links */
+
+.token-section {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.token-section h3 {
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+  font-weight: 500;
+  font-size: 1.15rem;
+}
+
+.token-buttons {
+  display: inline-flex;
+  gap: 1rem;
+  margin: 1rem 0 2rem;
+}
+
+.link-with-icon {
+  display: inline-flex;
+  align-items: center;
+}
+
+.link-with-icon img {
+  height: 20px;
+  width: auto;
+  margin-right: 8px;
+}
+
+.btn {
+  background-color: var(--accent);
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.btn:hover {
+  background-color: #17a085;
+  transform: scale(1.03);
+}
+
+/* Customize buy button separately if you want it to stand out more */
+.buy-btn {
+  box-shadow: 0 0 10px rgba(26,188,156,0.4);
+}
+
+/* Chart Section */
+.chart-section {
+  margin-top: 2rem;
+}
+
+.chart-section h3 {
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+  font-weight: 500;
+  font-size: 1.15rem;
+}
+
+.chart-embed {
+  width: 100%;
+  overflow: hidden;
+  border: 1px solid #222;
+  border-radius: 6px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+}
+
+/* Social Section */
+.social-section {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.social-section h3 {
+  color: var(--accent);
+  margin-bottom: 1rem;
+  font-weight: 500;
+  font-size: 1.15rem;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center; /* center horizontally */
+  gap: 1.5rem;
+}
+  
+.social-link img {
+  width: 40px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.social-link:hover img {
+  transform: scale(1.1);
+}
+
+/* Animations */
+@keyframes fadeUp {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+.fade-in-down {
+  opacity: 0;
+  animation: fadeInDown 0.8s ease forwards;
+}
+
+@keyframes fadeInDown {
+  0% {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.fade-in-up {
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+@keyframes fadeInUp {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.scale-in {
+  opacity: 0;
+  animation: scaleIn 0.8s ease forwards;
+}
+
+@keyframes scaleIn {
+  0% {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.03);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.fade-in-up-delay {
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+  animation-delay: 0.3s;
+}
+
+/***** whitepaper slide container *****/
+.whitepaper-container {
+    background-color: #111;
+    margin: 2rem auto;
+    padding: 2rem;
+    max-width: 900px;
+    border-radius: 8px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.8);
+    /* fix the height so no scrolling is needed */
+    height: 70vh; /* tweak if you want it taller/shorter */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* space for content + nav buttons */
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards;
+  }
+  
+  .slides-wrapper {
+    position: relative;
+    flex: 1; /* expand to fill extra space */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* hide overflow */
+  }
+  
+  /* each slide sized to fill container space */
+  .wp-slide {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 2rem;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    overflow-y: auto; /* if you want internal scroll for each slide? 
+                         or comment out if you truly want zero scrolling. */
+  }
+  
+  .wp-slide.active-slide {
+    transform: translateX(0);
+    opacity: 1;
+    z-index: 2;
+  }
+  
+  .wp-slide h2 {
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #222;
+    padding-bottom: 0.5rem;
+  }
+  
+  .wp-slide ul, .wp-slide ol {
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+  }
+  
+  .wp-slide p, .wp-slide li {
+    margin-bottom: 0.75rem;
+  }
+  
+  .slide-nav {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+  }
+  
+  .nav-btn {
+    background-color: var(--accent);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .nav-btn:hover {
+    background-color: #17a085;
+    transform: scale(1.03);
+  }
+  

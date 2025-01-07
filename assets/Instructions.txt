@@ -1,0 +1,6 @@
+Hello!
+I'm looking to build a website for my crypto currency project. The website will be simple, and include; about our token, a plan for the future of the project (roadmap), a link to buy the token on exchange, links to social media, a section for the whitepaper (mission statement), and two coming soon sections (apply to be a trader and staking rewards section). There will be no sophisticated functionality. I'm not sure if you can integrate a live chart into the website for the token but that would be great too.
+The name of our company is DegenDAO. The name of the token is Degen Trader by DegenDAO ($DDAO) We like a black heavy theme.
+https://app.uniswap.org/explore/tokens/base/0xb9b97a24be90a2c91e55a556fd687d975c527e4d
+https://dexscreener.com/base/0x95a650b692e528d2196da8a42a69713748cd505a
+Please let me know if this is something you'd be willing to work on.
