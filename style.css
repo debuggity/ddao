@@ -427,3 +427,33 @@ header {
     transform: scale(1.03);
   }
   
+  /***** faq page enhancements *****/
+
+/* faq section styling */
+.faq-section {
+    margin-bottom: 2rem;
+  }
+  
+  .faq-section h3 {
+    color: var(--accent);
+    margin-bottom: 1rem;
+    font-weight: 500;
+    font-size: 1.15rem;
+    border-bottom: 1px solid #222;
+    padding-bottom: 0.5rem;
+  }
+  
+  .faq-section dl {
+    margin-left: 1.2rem;
+  }
+  
+  .faq-section dt {
+    font-weight: 600;
+    margin-top: 1rem;
+  }
+  
+  .faq-section dd {
+    margin-left: 1rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.6;
+  }
