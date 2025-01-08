@@ -7,22 +7,30 @@
 </head>
 <body>
 
-  <header class="fade-in-down">
-    <nav>
-      <div class="logo-box">
-        <img src="assets/logo.jpg" alt="DegenDAO Corner Logo" class="corner-logo">
-      </div>
-      <ul class="nav-links">
-        <li><a href="index.html">About</a></li>
-        <li><a href="roadmap.html">Roadmap</a></li>
-        <li><a href="token.html">Token Links</a></li>
-        <li><a href="whitepaper.html">Whitepaper</a></li>
-        <li><a href="faq.html">FAQ</a></li>
-        <li class="coming-soon">Apply To Be A Trader</li>
-        <li class="coming-soon">Staking Rewards</li>
-      </ul>
-    </nav>
-  </header>
+    <header class="fade-in-down">
+        <nav>
+          <div class="logo-box">
+            <img src="assets/logo.jpg" alt="DegenDAO Corner Logo" class="corner-logo">
+          </div>
+          <ul class="nav-links">
+            <li><a href="index.html">About</a></li>
+            <li><a href="roadmap.html">Roadmap</a></li>
+            <li><a href="token.html">Token Links</a></li>
+            <li><a href="whitepaper.html">Whitepaper</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li class="coming-soon">Apply To Be A Trader</li>
+            <li class="coming-soon">Staking Rewards</li>
+          </ul>
+          <div class="social-icons">
+            <a href="https://x.com/degenddao" target="_blank">
+              <img src="assets/x.png" alt="X icon">
+            </a>
+            <a href="https://discord.com/invite/BKfrquhr" target="_blank">
+              <img src="assets/discord-logo.png" alt="Discord icon">
+            </a>
+          </div>
+        </nav>
+      </header>
 
   <!-- container with fixed height and slides for the whitepaper -->
   <section class="whitepaper-container fade-in-up">
@@ -174,6 +182,8 @@
       </div>
     </div>
 
+    <div class="page-indicator" id="pageIndicator"></div>
+
     <!-- navigation buttons for slides -->
     <div class="slide-nav">
       <button id="prevBtn" class="nav-btn">Previous</button>
@@ -183,11 +193,22 @@
   </section>
 
   <script>
-    // basic slider logic
     const slides = document.querySelectorAll('.wp-slide');
     const nextBtn = document.getElementById('nextBtn');
     const prevBtn = document.getElementById('prevBtn');
     let currentSlide = 0;
+
+    // create dots for each slide
+    const pageIndicator = document.getElementById('pageIndicator');
+    slides.forEach((_, index) => {
+      const dot = document.createElement('span');
+      dot.classList.add('dot');
+      dot.addEventListener('click', () => {
+        currentSlide = index;
+        updateSlide();
+      });
+      pageIndicator.appendChild(dot);
+    });
 
     function showSlide(index) {
       slides.forEach((slide, i) => {
@@ -195,18 +216,30 @@
       });
     }
 
+    function updateIndicator(index) {
+      const dots = document.querySelectorAll('.dot');
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('active-dot', i === index);
+      });
+    }
+
+    function updateSlide() {
+      showSlide(currentSlide);
+      updateIndicator(currentSlide);
+    }
+
     nextBtn.addEventListener('click', () => {
       currentSlide = (currentSlide + 1) % slides.length;
-      showSlide(currentSlide);
+      updateSlide();
     });
 
     prevBtn.addEventListener('click', () => {
       currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-      showSlide(currentSlide);
+      updateSlide();
     });
 
     // ensure initial slide is visible
-    showSlide(currentSlide);
+    updateSlide();
   </script>
 </body>
 </html>

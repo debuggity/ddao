@@ -7,22 +7,30 @@
 </head>
 <body>
 
-  <header class="fade-in-down">
-    <nav>
-      <div class="logo-box">
-        <img src="assets/logo.jpg" alt="DegenDAO Corner Logo" class="corner-logo">
-      </div>
-      <ul class="nav-links">
-        <li><a href="index.html">About</a></li>
-        <li><a href="roadmap.html">Roadmap</a></li>
-        <li><a href="token.html">Token Links</a></li>
-        <li><a href="whitepaper.html">Whitepaper</a></li>
-        <li><a href="faq.html">FAQ</a></li>
-        <li class="coming-soon">Apply To Be A Trader</li>
-        <li class="coming-soon">Staking Rewards</li>
-      </ul>
-    </nav>
-  </header>
+    <header class="fade-in-down">
+        <nav>
+          <div class="logo-box">
+            <img src="assets/logo.jpg" alt="DegenDAO Corner Logo" class="corner-logo">
+          </div>
+          <ul class="nav-links">
+            <li><a href="index.html">About</a></li>
+            <li><a href="roadmap.html">Roadmap</a></li>
+            <li><a href="token.html">Token Links</a></li>
+            <li><a href="whitepaper.html">Whitepaper</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li class="coming-soon">Apply To Be A Trader</li>
+            <li class="coming-soon">Staking Rewards</li>
+          </ul>
+          <div class="social-icons">
+            <a href="https://x.com/degenddao" target="_blank">
+              <img src="assets/x.png" alt="X icon">
+            </a>
+            <a href="https://discord.com/invite/BKfrquhr" target="_blank">
+              <img src="assets/discord-logo.png" alt="Discord icon">
+            </a>
+          </div>
+        </nav>
+      </header>
 
   <section class="content-wrapper fade-in-up">
     <h2>$DDAO Token Links</h2>
@@ -43,29 +51,45 @@
           <img src="assets/dex.png" alt="dexscreener icon">
           dexscreener
         </a>
+        <a href="https://www.dextools.io/app/en/base/pair-explorer/0x95a650b692e528d2196da8a42a69713748cd505a?t=1736301512611" 
+           target="_blank" 
+           class="btn link-with-icon">
+          <img src="assets/dextools.png" alt="dexscreener icon">
+          dextools
+        </a>
       </div>
+    </div>
+
+    <!-- community section centered -->
+    <div class="social-section">
+    <h3>Community</h3>
+    <div class="social-links">
+        <a href="https://x.com/degenddao" target="_blank" class="social-link">
+        <img src="assets/x.png" alt="twitter icon">
+        </a>
+        <a href="https://discord.com/invite/BKfrquhr" target="_blank" class="social-link">
+        <img src="assets/discord-logo.png" alt="discord icon">
+        </a>
+    </div>
     </div>
   
     <div class="chart-section">
-      <h3>Live Chart</h3>
-      <div class="chart-embed">
-        <style>#dexscreener-embed{position:relative;width:100%;padding-bottom:125%;}@media(min-width:1400px){#dexscreener-embed{padding-bottom:65%;}}#dexscreener-embed iframe{position:absolute;width:100%;height:100%;top:0;left:0;border:0;}</style><div id="dexscreener-embed"><iframe src="https://dexscreener.com/base/0x95a650B692e528D2196da8a42a69713748Cd505a?embed=1&loadChartSettings=0&trades=0&chartLeftToolbar=0&chartDefaultOnMobile=1&chartTheme=dark&theme=dark&chartStyle=0&chartType=usd&interval=15"></iframe></div>      </div>
-      </div>
-  
-    <!-- community section centered -->
-    <div class="social-section">
-      <h3>Community</h3>
-      <div class="social-links">
-        <a href="https://x.com/degenddao" target="_blank" class="social-link">
-          <img src="assets/x.png" alt="twitter icon">
-        </a>
-        <a href="https://discord.com/invite/BKfrquhr" target="_blank" class="social-link">
-          <img src="assets/discord-logo.png" alt="discord icon">
-        </a>
-      </div>
+    <h3>Live Chart</h3>
+    <div class="chart-embed">
+        <iframe
+        id="dextools-widget"
+        title="DEXTools Trading Chart"
+        src="https://www.dextools.io/widget-chart/en/base/pe-light/0x95a650b692e528d2196da8a42a69713748cd505a?theme=dark&chartType=2&chartResolution=30&drawingToolbars=false"
+        allowfullscreen>
+        </iframe>
     </div>
-  </section>
-  
+    <br>
+    <h3>Aggregator</h3>
+    <iframe id="dextswap-aggregator-widget"
+    title="DEXTswap Aggregator"
+    width="400" height="420"
+    src="https://www.dextools.io/widget-aggregator/en/swap/base/0xb9b97a24be90a2c91e55a556fd687d975c527e4d"></iframe>
+    </div>
 
   <script src="script.js"></script>
 </body>
