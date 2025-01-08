@@ -14,7 +14,7 @@ body {
   overflow-x: hidden;
 }
 
-/* accent color: a more subtle teal for a modern industrial vibe */
+/* Accent color */
 :root {
   --accent: #7abdb2;
 }
@@ -25,13 +25,14 @@ header {
   padding: 1rem 2rem;
   display: flex;
   align-items: center;
-  justify-content: center; /* center-align the header content */
+  justify-content: center; /* Center-align the header content */
   border-bottom: 1px solid #222;
+  position: relative; /* Ensure positioning context for logo-box and social-icons */
 }
 
 .logo-box {
-  position: absolute; /* take the logo out of the flow */
-  left: 1rem; /* position the logo on the left */
+  position: absolute; /* Take the logo out of the flow */
+  left: 1rem; /* Position the logo on the left */
 }
 
 .corner-logo {
@@ -70,6 +71,32 @@ header {
 .coming-soon:hover {
   color: #fff;
   opacity: 0.7;
+}
+
+/* Social Icons */
+.social-icons {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.social-icons a {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3s ease;
+}
+
+.social-icons a img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.social-icons a:hover {
+  transform: scale(1.1);
 }
 
 /* Hero Section */
@@ -170,8 +197,6 @@ header {
   line-height: 1.6;
 }
 
-
-
 /* Buttons & Links */
 
 .token-section {
@@ -227,6 +252,7 @@ header {
 /* Chart Section */
 .chart-section {
   margin-top: 2rem;
+  padding: 10px;
 }
 
 .chart-section h3 {
@@ -237,11 +263,40 @@ header {
 }
 
 .chart-embed {
-  width: 100%;
+  position: relative;
+  width: 100%; /* Make it take up the full width of the container */
+  padding-bottom: 62%; /* Maintain the aspect ratio (510/835 = ~0.62) */
+  height: 0;
   overflow: hidden;
-  border: 1px solid #222;
-  border-radius: 6px;
-  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+}
+
+.chart-embed iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none; /* Remove iframe border */
+}
+
+/* Aggregator Embed */
+.aggregator-embed {
+  position: relative;
+  width: 100%;
+  max-width: 400px; /* Original width of the iframe */
+  margin: 0 auto; /* Center the container */
+  padding-bottom: 105%; /* Aspect ratio based on original height/width (420/400 = 1.05) */
+  height: 0;
+  overflow: hidden;
+}
+
+.aggregator-embed iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 65%;
+  border: none; /* Remove iframe border */
 }
 
 /* Social Section */
@@ -259,10 +314,10 @@ header {
 
 .social-links {
   display: flex;
-  justify-content: center; /* center horizontally */
+  justify-content: center; /* Center horizontally */
   gap: 1.5rem;
 }
-  
+
 .social-link img {
   width: 40px;
   height: auto;
@@ -343,7 +398,7 @@ header {
   animation-delay: 0.3s;
 }
 
-/***** whitepaper slide container *****/
+/* Whitepaper Slide Container */
 .whitepaper-container {
     background-color: #111;
     margin: 2rem auto;
@@ -351,26 +406,24 @@ header {
     max-width: 900px;
     border-radius: 8px;
     box-shadow: 0 0 30px rgba(0,0,0,0.8);
-    /* fix the height so no scrolling is needed */
-    height: 70vh; /* tweak if you want it taller/shorter */
+    height: 70vh; /* Adjust as needed */
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* space for content + nav buttons */
+    justify-content: space-between; /* Space for content + nav buttons */
     opacity: 0;
     animation: fadeUp 0.8s ease forwards;
-  }
-  
-  .slides-wrapper {
+}
+
+.slides-wrapper {
     position: relative;
-    flex: 1; /* expand to fill extra space */
+    flex: 1; /* Expand to fill extra space */
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden; /* hide overflow */
-  }
-  
-  /* each slide sized to fill container space */
-  .wp-slide {
+    overflow: hidden; /* Hide overflow */
+}
+
+.wp-slide {
     position: absolute;
     top: 0; left: 0;
     width: 100%;
@@ -379,39 +432,38 @@ header {
     opacity: 0;
     transform: translateX(100%);
     transition: transform 0.5s ease, opacity 0.5s ease;
-    overflow-y: auto; /* if you want internal scroll for each slide? 
-                         or comment out if you truly want zero scrolling. */
-  }
-  
-  .wp-slide.active-slide {
+    overflow-y: auto; /* Internal scroll for each slide */
+}
+
+.wp-slide.active-slide {
     transform: translateX(0);
     opacity: 1;
     z-index: 2;
-  }
-  
-  .wp-slide h2 {
+}
+
+.wp-slide h2 {
     margin-bottom: 1rem;
     border-bottom: 1px solid #222;
     padding-bottom: 0.5rem;
-  }
-  
-  .wp-slide ul, .wp-slide ol {
+}
+
+.wp-slide ul, .wp-slide ol {
     margin-left: 1.5rem;
     margin-bottom: 1rem;
     line-height: 1.6;
-  }
-  
-  .wp-slide p, .wp-slide li {
+}
+
+.wp-slide p, .wp-slide li {
     margin-bottom: 0.75rem;
-  }
-  
-  .slide-nav {
+}
+
+.slide-nav {
     display: flex;
     justify-content: space-between;
     margin-top: 1rem;
-  }
-  
-  .nav-btn {
+}
+
+.nav-btn {
     background-color: var(--accent);
     color: #fff;
     border: none;
@@ -420,182 +472,133 @@ header {
     cursor: pointer;
     font-weight: 600;
     transition: background-color 0.3s ease, transform 0.3s ease;
-  }
-  
-  .nav-btn:hover {
+}
+
+.nav-btn:hover {
     background-color: #17a085;
     transform: scale(1.03);
-  }
-  
-  /***** faq page enhancements *****/
+}
 
-/* faq section styling */
+/* FAQ Section Enhancements */
 .faq-section {
     margin-bottom: 2rem;
-  }
-  
-  .faq-section h3 {
+}
+
+.faq-section h3 {
     color: var(--accent);
     margin-bottom: 1rem;
     font-weight: 500;
     font-size: 1.15rem;
     border-bottom: 1px solid #222;
     padding-bottom: 0.5rem;
-  }
-  
-  .faq-section dl {
+}
+
+.faq-section dl {
     margin-left: 1.2rem;
-  }
-  
-  .faq-section dt {
+}
+
+.faq-section dt {
     font-weight: 600;
     margin-top: 1rem;
-  }
-  
-  .faq-section dd {
+}
+
+.faq-section dd {
     margin-left: 1rem;
     margin-bottom: 0.75rem;
     line-height: 1.6;
-  }
+}
 
-  .chart-section {
-    padding: 10px;
-  }
-
-  .chart-embed {
-    position: relative;
-    width: 100%; /* make it take up the full width of the container */
-    padding-bottom: 62%; /* maintain the aspect ratio (510/835 = ~0.62) */
-    height: 0;
-    overflow: hidden;
-  }
-
-  .chart-embed iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: none; /* remove iframe border */
-  }
-
-  .social-icons {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    display: flex;
-    gap: 1rem;
-  }
-  
-  .social-icons a {
-    display: inline-block;
-    width: 30px;
-    height: 30px;
-    transition: transform 0.3s ease;
-  }
-  
-  .social-icons a img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-  }
-  
-  .social-icons a:hover {
-    transform: scale(1.1);
-  }
-
-  .page-indicator {
+/* Page Indicator */
+.page-indicator {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 1rem;
     gap: 0.5rem;
-  }
-  
-  .dot {
+}
+
+.dot {
     width: 12px;
     height: 12px;
     border-radius: 50%;
     background-color: #666;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
-  }
-  
-  .dot:hover {
+}
+
+.dot:hover {
     background-color: var(--accent);
     transform: scale(1.2);
-  }
-  
-  .active-dot {
+}
+
+.active-dot {
     background-color: var(--accent);
     box-shadow: 0 0 6px rgba(0,255,160,0.6);
-  }
-  
-  
+}
 
-  @media screen and (max-width: 900px) {
+/* Media Queries */
+@media screen and (max-width: 900px) {
 
-    header {
-      flex-direction: column;
-      padding: 1rem;
-      justify-content: space-between;
-    }
-  
-    .logo-box {
-      position: static;
-      margin-bottom: 1rem;
-    }
-  
-    .nav-links {
-      flex-direction: column;
-      margin-top: 1rem;
-    }
-  
-    .nav-links li {
-      margin-left: 0;
-      margin-bottom: 0.5rem;
-    }
-  
-    .hero {
-      height: auto;
-      padding: 2rem 1rem;
-    }
-  
-    .hero-logo {
-      width: 80%;
-      margin-bottom: 1rem;
-    }
-  
-    .roadmap-phase {
-      margin-bottom: 1rem;
-    }
-  
-    .token-buttons, .social-links {
-        display: flex;
-        flex-wrap: wrap; /* allow wrapping for small screens */
-        justify-content: center; /* center the buttons */
-        gap: 1rem; /* add consistent spacing between items */
-      }
-      
-      /* make buttons uniform in size and centered */
-    .token-buttons a, .social-links a {
-        flex: 0 1 auto; /* allow buttons to adjust size naturally */
-        text-align: center;
-        min-width: 120px; /* ensure buttons don't get too small */
-        max-width: 170px; /* set a max width for consistency */
-    }
-  
-    .chart-embed {
-      height: 300px; /* adjust as needed */
-    }
+  header {
+    flex-direction: column;
+    padding: 1rem;
+    justify-content: space-between;
   }
-  @media screen and (max-width: 900px) {
-    .token-buttons a, .social-links a {
-      flex: 0 1 calc(50% - 1rem); /* two buttons per row, centered */
-    }
-    .social-links {
-        flex-wrap: nowrap;
-        gap: 0.5rem; /* or 0 if you want them super cozy */
-      }
+
+  .logo-box {
+    position: static;
+    margin-bottom: 1rem;
   }
-  
+
+  .nav-links {
+    flex-direction: column;
+    margin-top: 1rem;
+  }
+
+  .nav-links li {
+    margin-left: 0;
+    margin-bottom: 0.5rem;
+  }
+
+  .hero {
+    height: auto;
+    padding: 2rem 1rem;
+  }
+
+  .hero-logo {
+    width: 80%;
+    margin-bottom: 1rem;
+  }
+
+  .roadmap-phase {
+    margin-bottom: 1rem;
+  }
+
+  .token-buttons,
+  .social-links {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping for small screens */
+    justify-content: center; /* Center the buttons */
+    gap: 1rem; /* Add consistent spacing between items */
+  }
+
+  .token-buttons a,
+  .social-links a {
+    flex: 0 1 auto; /* Allow buttons to adjust size naturally */
+    text-align: center;
+    min-width: 120px; /* Ensure buttons don't get too small */
+    max-width: 170px; /* Set a max width for consistency */
+  }
+
+  .chart-embed {
+    height: 300px; /* Adjust as needed */
+  }
+}
+
+@media screen and (max-width: 600px) {
+  /* Further adjustments for very small screens */
+
+  .chart-embed {
+    padding-bottom: 80%; /* Adjust aspect ratio if necessary */
+  }
+}

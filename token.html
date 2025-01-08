@@ -74,22 +74,27 @@
     </div>
     </div>
   
+    <!-- Charts Section -->
     <div class="chart-section">
-    <h3>Live Chart</h3>
-    <div class="chart-embed">
-        <iframe
-        id="dextools-widget"
-        title="DEXTools Trading Chart"
-        src="https://www.dextools.io/widget-chart/en/base/pe-light/0x95a650b692e528d2196da8a42a69713748cd505a?theme=dark&chartType=2&chartResolution=30&drawingToolbars=false"
-        allowfullscreen>
-        </iframe>
-    </div>
-    <br>
-    <h3>Aggregator</h3>
-    <iframe id="dextswap-aggregator-widget"
-    title="DEXTswap Aggregator"
-    width="400" height="420"
-    src="https://www.dextools.io/widget-aggregator/en/swap/base/0xb9b97a24be90a2c91e55a556fd687d975c527e4d"></iframe>
+        <h3>Live Chart</h3>
+        <div class="chart-embed">
+            <iframe
+            id="dextools-widget"
+            title="DEXTools Trading Chart"
+            src="https://www.dextools.io/widget-chart/en/base/pe-light/0x95a650b692e528d2196da8a42a69713748cd505a?theme=dark&chartType=2&chartResolution=30&drawingToolbars=false"
+            allowfullscreen>
+            </iframe>
+        </div>
+        <br>
+        <h3>Aggregator</h3>
+        <!-- Wrapped Aggregator iframe in a div -->
+        <div class="aggregator-embed">
+            <iframe
+            id="dextswap-aggregator-widget"
+            title="DEXTswap Aggregator"
+            src="https://www.dextools.io/widget-aggregator/en/swap/base/0xb9b97a24be90a2c91e55a556fd687d975c527e4d">
+            </iframe>
+        </div>
     </div>
 
   <script src="script.js"></script>
